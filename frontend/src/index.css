@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0a0b14;
+  --surface: #131726;
+  --surface-soft: #1a1f31;
+  --line: #242a41;
+  --text: #edf1ff;
+  --muted: #9ba3bf;
+  --brand: #7c5cff;
+  --brand-strong: #6645ee;
+}
+
+body {
+  @apply m-0;
+  background: radial-gradient(circle at 15% 10%, #1e2340 0%, var(--bg) 42%);
+  color: var(--text);
+  font-family: Manrope, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Space Grotesk', Manrope, ui-sans-serif, sans-serif;
+}
+
+.card {
+  @apply rounded-xl border p-4 shadow-sm;
+  border-color: var(--line);
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  backdrop-filter: blur(6px);
+}
+
+.field {
+  @apply rounded-lg border px-3 py-2 text-sm;
+  border-color: var(--line);
+  background: var(--surface-soft);
+  color: var(--text);
+}
+
+.field::placeholder {
+  color: var(--muted);
+}
+
+.btn-primary {
+  @apply rounded-lg px-4 py-2 text-sm font-semibold text-white transition-colors disabled:opacity-60;
+  background: var(--brand);
+}
+
+.btn-primary:hover {
+  background: var(--brand-strong);
+}
+
+.btn-muted {
+  @apply rounded-lg border px-4 py-2 text-sm;
+  border-color: var(--line);
+  color: var(--text);
+  background: var(--surface-soft);
+}
+
+.muted {
+  color: var(--muted);
+}
